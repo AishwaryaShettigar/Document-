@@ -1,0 +1,4 @@
+command prompt 
+>set path=C:\Program Files\Microsoft\jdk-11.0.23.9-hotspot\bin;.;
+
+C:\Users\aishwarya.x09>javap java.util.Scanner

@@ -1,0 +1,236 @@
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ gite remote add origin "https://github.com/AishwaryaShettigar/aish"
+bash: gite: command not found
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git remote add origin "https://github.com/AishwaryaShettigar/aish"
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 866 bytes | 9.00 KiB/s, done.
+From https://github.com/AishwaryaShettigar/aish
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ vi test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ ls -l
+total 2
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git branch ec
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git branch cs
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git checkout ec
+Switched to branch 'ec'
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ vi ec1.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ ls -l
+total 3
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:09 ec1.txt
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ git add ec1.txt
+warning: in the working copy of 'ec1.txt', LF will be replaced by CRLF the next time Git touches it
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ git status
+On branch ec
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ec1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ git commit -m "this is one."
+[ec 59f27fc] this is one.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ec1.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ ls -l
+total 3
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:09 ec1.txt
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (ec)
+$ git checkout cs
+Switched to branch 'cs'
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ ls -l
+total 2
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ vi cs1.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ ls -l
+total 3
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:13 cs1.txt
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$  git commit -m "this is two."
+On branch cs
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        cs1.txt
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ git add cs1.txt
+warning: in the working copy of 'cs1.txt', LF will be replaced by CRLF the next time Git touches it
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ git add test.txt
+warning: in the working copy of 'test.txt', LF will be replaced by CRLF the next time Git touches it
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ ls -l
+total 3
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:13 cs1.txt
+-rw-r--r-- 1 aishwarya.x09 1049089  7 Jul  9 12:05 hi.txt
+-rw-r--r-- 1 aishwarya.x09 1049089 12 Jul  9 12:06 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ git commit -m "this is two."
+[cs 3bebe8c] this is two.
+ 2 files changed, 2 insertions(+)
+ create mode 100644 cs1.txt
+ create mode 100644 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (cs)
+$ git checkout master
+Switched to branch 'master'
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git merge cs
+Updating 636f0fe..3bebe8c
+Fast-forward
+ cs1.txt  | 1 +
+ test.txt | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 cs1.txt
+ create mode 100644 test.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git merge ec
+Merge made by the 'ort' strategy.
+ ec1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 ec1.txt
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git config --global user.email "AishwaryaShettigar.aishushettigar2001@gmail.com'
+> git config --global user.email "AishwaryaShettigar.aishushettigar2001@gmail.com"
+> ^C
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git config --global user.email "AishwaryaShettigar.aishushettigar2001@gmail.com"
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git config --global user.username "AishwaryaShettigar.AishwaryaShettigar"
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/aishwarya.x09/.ssh/id_ed25519):
+/c/Users/aishwarya.x09/.ssh/id_ed25519 already exists.
+Overwrite (y/n)?
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/aishwarya.x09/.ssh/id_ed25519):
+/c/Users/aishwarya.x09/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/aishwarya.x09/.ssh/id_ed25519
+Your public key has been saved in /c/Users/aishwarya.x09/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:7Xqy5Y1h61+XxR4iFg087CLKPMGg4mt5tkgUnkV6v+c aishwarya.x09@WKSBAN36CHATR17
+The key's randomart image is:
++--[ED25519 256]--+
+|   .      o.     |
+|  o.       +o    |
+| o.oo     ....   |
+|o.= .o . o ..  . |
+|o+  o.o S oo . .o|
+|..   =.  .. . ..+|
+| .o  ...  =   ..o|
+|.+.o  o .=.= . . |
+|..o..  Eo==.o    |
++----[SHA256]-----+
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ cat /c/Users/aishwarya.x09/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIArz4O+KyvcdZb4kcL/o0YULGLZUdYjzHAmRH4UXk+Fq aishwarya.x09@WKSBAN36CHATR17
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git push origin ec
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 297 bytes | 297.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'ec' on GitHub by visiting:
+remote:      https://github.com/AishwaryaShettigar/aish/pull/new/ec
+remote:
+To https://github.com/AishwaryaShettigar/aish
+ * [new branch]      ec -> ec
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 557 bytes | 557.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/AishwaryaShettigar/aish/pull/new/master
+remote:
+To https://github.com/AishwaryaShettigar/aish
+ * [new branch]      master -> master
+
+aishwarya.x09@WKSBAN36CHATR17 MINGW64 ~/Desktop/aish (master)
+$

@@ -1,0 +1,288 @@
+show databases; // shows the databases
+system cls; //clear the command prompt 
+use mphasis237; // access //kiind of folder
+create table student237(empno int,name varchar(30), address varchar(30));  // create a table with following entities 
+insert into student237 values(101, 'sandip','bangalore'); // insert values inot the table. similar way other data can be added
+select *from student237; // shows the whole table 
+select empno,name from student237; // shows the only table or rows which we want wo access
+update student237 set address='hyderabad' where empno=102; // update the value from the existing data 
+update student237 set address='hydrabad' where empno in(103,104); //update for different values
+
+
+
+
+
+
+
+
+
+
+
+
+
+// executed code from mysql command prompt 
+mysql> use mphasis237;
+Database changed
+mysql> create table student237(empno int,name varchar(30), address varchar(30));
+Query OK, 0 rows affected (0.42 sec)
+
+mysql> insert into student237 values(101, 'sandip','bangalore');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into student237 values(102,'kiran',bangalore');
+    '> ^C
+mysql> insert into student237 values(102,'kiran','bangalore');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select *from student237;
++-------+--------+-----------+
+| empno | name   | address   |
++-------+--------+-----------+
+|   101 | sandip | bangalore |
+|   102 | kiran  | bangalore |
++-------+--------+-----------+
+2 rows in set (0.01 sec)
+
+mysql> select empno,name from student237;
++-------+--------+
+| empno | name   |
++-------+--------+
+|   101 | sandip |
+|   102 | kiran  |
++-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select from student237;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from student237' at line 1
+mysql> select empno,name from student237;
++-------+--------+
+| empno | name   |
++-------+--------+
+|   101 | sandip |
+|   102 | kiran  |
++-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> update student237 set adress='hyderabad' where empno=102;
+ERROR 1054 (42S22): Unknown column 'adress' in 'field list'
+mysql> update student237 set address='hyderabad' where empno=102;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from student237;
++-------+--------+-----------+
+| empno | name   | address   |
++-------+--------+-----------+
+|   101 | sandip | bangalore |
+|   102 | kiran  | hyderabad |
++-------+--------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> insert into student237 values(103, 'hari','bangalore');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student237 values(103, 'madhu','bangalore');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> update student237 set address='hydrabad' where empno in(103,104);
+Query OK, 2 rows affected (0.07 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> alter table student237 add phy int;
+Query OK, 0 rows affected (0.37 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table 237 student237 add chem int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '237 student237 add chem int' at line 1
+mysql> alter table student237 add chem int;
+Query OK, 0 rows affected (0.18 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student237 add maths int;
+Query OK, 0 rows affected (0.26 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student237 add tot int;
+Query OK, 0 rows affected (0.15 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table student237 add avg int;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select *from student237;
++-------+--------+-----------+------+------+-------+------+------+
+| empno | name   | address   | phy  | chem | maths | tot  | avg  |
++-------+--------+-----------+------+------+-------+------+------+
+|   101 | sandip | bangalore | NULL | NULL |  NULL | NULL | NULL |
+|   102 | kiran  | hyderabad | NULL | NULL |  NULL | NULL | NULL |
+|   103 | hari   | hydrabad  | NULL | NULL |  NULL | NULL | NULL |
+|   103 | madhu  | hydrabad  | NULL | NULL |  NULL | NULL | NULL |
++-------+--------+-----------+------+------+-------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> update student237 set phy=78, chem=56, maths=65 where empno=101;
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student237 set phy=50, chem=77, math=45 where empno=102;
+ERROR 1054 (42S22): Unknown column 'math' in 'field list'
+mysql> update student237 set phy=50, chem=77, maths=45 where empno=102;
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student237 set phy=88, chem=97, maths=33 where empno=103;
+Query OK, 2 rows affected (0.07 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update student237 set phy=47, chem=93, maths73 where empno=104;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where empno=104' at line 1
+mysql> update student237 set phy=47, chem=93, maths=73 where empno=104;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select *from student237;
++-------+--------+-----------+------+------+-------+------+------+
+| empno | name   | address   | phy  | chem | maths | tot  | avg  |
++-------+--------+-----------+------+------+-------+------+------+
+|   101 | sandip | bangalore |   78 |   56 |    65 | NULL | NULL |
+|   102 | kiran  | hyderabad |   50 |   77 |    45 | NULL | NULL |
+|   103 | hari   | hydrabad  |   88 |   97 |    33 | NULL | NULL |
+|   103 | madhu  | hydrabad  |   88 |   97 |    33 | NULL | NULL |
++-------+--------+-----------+------+------+-------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> update student237 set total=phy+chem+maths;
+ERROR 1054 (42S22): Unknown column 'total' in 'field list'
+mysql> update student237 set total=phy+chem+maths ;
+ERROR 1054 (42S22): Unknown column 'total' in 'field list'
+mysql> update student237 set tot=phy+chem+maths;
+Query OK, 4 rows affected (0.06 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> update student237 set avg=tot/3;
+Query OK, 4 rows affected (0.08 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select *from student237;
++-------+--------+-----------+------+------+-------+------+------+
+| empno | name   | address   | phy  | chem | maths | tot  | avg  |
++-------+--------+-----------+------+------+-------+------+------+
+|   101 | sandip | bangalore |   78 |   56 |    65 |  199 |   66 |
+|   102 | kiran  | hyderabad |   50 |   77 |    45 |  172 |   57 |
+|   103 | hari   | hydrabad  |   88 |   97 |    33 |  218 |   73 |
+|   103 | madhu  | hydrabad  |   88 |   97 |    33 |  218 |   73 |
++-------+--------+-----------+------+------+-------+------+------+
+4 rows in set (0.00 sec)
+
+mysql> delete from student237 where empno=101;
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select *from student237;
++-------+-------+-----------+------+------+-------+------+------+
+| empno | name  | address   | phy  | chem | maths | tot  | avg  |
++-------+-------+-----------+------+------+-------+------+------+
+|   102 | kiran | hyderabad |   50 |   77 |    45 |  172 |   57 |
+|   103 | hari  | hydrabad  |   88 |   97 |    33 |  218 |   73 |
+|   103 | madhu | hydrabad  |   88 |   97 |    33 |  218 |   73 |
++-------+-------+-----------+------+------+-------+------+------+
+3 rows in set (0.00 sec)
+
+mysql> truncate student237;
+Query OK, 0 rows affected (0.54 sec)
+
+mysql> select *from student237;
+Empty set (0.00 sec)
+
+mysql> desc student237;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| empno   | int         | YES  |     | NULL    |       |
+| name    | varchar(30) | YES  |     | NULL    |       |
+| address | varchar(30) | YES  |     | NULL    |       |
+| phy     | int         | YES  |     | NULL    |       |
+| chem    | int         | YES  |     | NULL    |       |
+| maths   | int         | YES  |     | NULL    |       |
+| tot     | int         | YES  |     | NULL    |       |
+| avg     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+8 rows in set (0.10 sec)
+
+mysql> drop student237;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student237' at line 1
+mysql> drop table student237;
+Query OK, 0 rows affected (0.24 sec)
+
+mysql> select *from student237;
+ERROR 1146 (42S02): Table 'mphasis237.student237' doesn't exist
+mysql>
+
+
+
+create table fare(id INT AUTO_INCREMENT ,fare varchar(25),flight_date varchar(25),flight_number varchar(25),primary key(id)) ;
+Query OK, 0 rows affected (1.02 sec)
+
+mysql> insert into fare(fare,flight_date,flight_number) values('hyd-bang','12-jul-2024','air-207');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select *from fare;
++----+----------+-------------+---------------+
+| id | fare     | flight_date | flight_number |
++----+----------+-------------+---------------+
+|  1 | hyd-bang | 12-jul-2024 | air-207       |
++----+----------+-------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> insert into fare(fare,flight_date,flight_number) values('bang-hyd','13-jul-2024','air-307');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into fare(fare,flight_date,flight_number) values('bang-mng','13-jul-2024','air-407');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select *from fare;
++----+----------+-------------+---------------+
+| id | fare     | flight_date | flight_number |
++----+----------+-------------+---------------+
+|  1 | hyd-bang | 12-jul-2024 | air-207       |
+|  2 | bang-hyd | 13-jul-2024 | air-307       |
+|  3 | bang-mng | 13-jul-2024 | air-407       |
++----+----------+-------------+---------------+
+
+mysql> drop table fare;
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> select *from fare;
+ERROR 1146 (42S02): Table 'mphasis237.fare' doesn't exist
+mysql>
+mysql> create table booking_record(id INT primary key AUTO_INCREMENT, booking_date timestamp, destination VARCHAR(255), price VARCHAR(255), flight_date VARCHAR(255), flight _number VARCHAR(255), origin VARCHAR(255), status VARCHAR(255));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '_number VARCHAR(255), origin VARCHAR(255), status VARCHAR(255))' at line 1
+mysql> create table booking_record(id INT primary key AUTO_INCREMENT, booking_date timestamp, destination VARCHAR(255), price VARCHAR(255), flight_date VARCHAR(255), flight_number VARCHAR(255), origin VARCHAR(255), status VARCHAR(255));
+Query OK, 0 rows affected (1.03 sec)
+
+mysql> insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,status)
+    -> ^C
+mysql> insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,status)
+    -> ^C
+mysql> insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,status) values('2024-07-10 5:00','Pune','RS 5000','12-july-2024','air-206','hyd','yes');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select *from booking_record;
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+| id | booking_date        | destination | price   | flight_date  | flight_number | origin | status |
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+|  1 | 2024-07-10 05:00:00 | Pune        | RS 5000 | 12-july-2024 | air-206       | hyd    | yes    |
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+1 row in set (0.00 sec)
+mysql> insert into booking_record(booking_date,destination,price,flight_date,flight_number,origin,status) values('2024-07-10 5:00','Mangalore','RS 6000','12-july-2024','air-306','bng','yes');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select *from booking_record;
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+| id | booking_date        | destination | price   | flight_date  | flight_number | origin | status |
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+|  1 | 2024-07-10 05:00:00 | Pune        | RS 5000 | 12-july-2024 | air-206       | hyd    | yes    |
+|  2 | 2024-07-10 05:00:00 | Mangalore   | RS 6000 | 12-july-2024 | air-306       | bng    | yes    |
++----+---------------------+-------------+---------+--------------+---------------+--------+--------+
+
+

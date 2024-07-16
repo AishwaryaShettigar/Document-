@@ -1,0 +1,42 @@
+create database Catalog;                      
+use catalog;
+create table categories(category_id INT primary key,category_name varchar(255) not null unique);
+insert into categories(category_id,category_name) values(1,'fiction');
+insert into categories(category_id,category_name) values(2,'horror');
+insert into categories(category_id,category_name) values(3,'fantasy');
+insert into categories(category_id,category_name) values(4,'history');
+insert into categories(category_id,category_name) values(5,'science & technology');
+
+select *from categories;
+
+create table publishers(publisher_id INT primary key,publisher_name varchar(255) not null);
+insert into publishers(publisher_id,publisher_name) values(101,'gold');
+insert into publishers(publisher_id,publisher_name) values(202,'silver');
+insert into publishers(publisher_id,publisher_name) values(303,'diamond');
+insert into publishers(publisher_id,publisher_name) values(404,'platinum');
+
+select *from publishers;
+
+create table users(user_id int primary key,user_name varchar(30) not null,user_email varchar(50) not null unique, user_mobile_num int not null unique);
+insert into users(user_id,user_name,user_email,user_mobile_num) values(126,'AISHA','AISH@GMAIL.COM',123456789);
+insert into users(user_id,user_name,user_email,user_mobile_num) values(136,'PRAJ','PRAJ@GMAIL.COM',123456999);
+insert into users(user_id,user_name,user_email,user_mobile_num) values(146,'JEEV','JEEV@GMAIL.COM',123456888);
+insert into users(user_id,user_name,user_email,user_mobile_num) values(156,'SHRI','SHRI@GMAIL.COM',123456777);
+insert into users(user_id,user_name,user_email,user_mobile_num) values(166,'SURI','SURI@GMAIL.COM',12345666);
+
+select *from users;
+
+create table books(book_id int primary key,book_title varchar(50) not null, ISBN_num int not null unique,publication_year int not null, publisher_id int , category_id int, author_name varchar(30) CHECK (author_name!=''), foreign key(category_id) references categories(category_id) on delete cascade,foreign key(publisher_id) references publishers(publisher_id) on delete cascade);
+insert into books values(1011,'abcd',989898,2024,101,2,'hema');
+insert into books values(2022,'efgh',767676,2013,303,5,'jay');
+
+select *from books;
+
+create table borrowings(borrow_id int primary key,user_id int, book_id int, borrow_date varchar(50) not null, return_date varchar(50) not null,foreign key(user_id) references users(user_id) on delete cascade, foreign key(book_id) references books(book_id) on delete cascade); 
+insert into borrowings values(1522,126,2022,'24-jun-2024','30-june-2024');
+insert into borrowings values(1688,136,1011,'16-jun-2024','21-june-2024');
+
+select *from borrowings;
+
+delete from publishers where publisher_id=101;
+
