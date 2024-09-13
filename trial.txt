@@ -1,0 +1,80 @@
+
+Online Food Delivery System
+ 
+
+Domain: Food Delivery
+Project Objective:
+Create a dynamic and responsive online food delivery web application for online ordering of food items 
+of different cuisines from a restaurant.
+Tools and Technologies:
+• Front-End: Angular
+• Server-side: Spring Boot.
+• Back-end: MYSQL, Hibernate.
+• Server: Tomcat 
+
+Background of the project:
+Foodbox is a restaurant chain that delivers food items of different cuisines at affordable prices. It was 
+established in 2014.It had been serving fine all these years; however, the business analysts noticed a 
+decline in sales since 2016. They found out that online ordering of food items with companies, such as 
+Swiggy and Foodpanda are gaining more profits by eliminating middlemen from the equation. As a result, 
+the team decided to hire a Full Stack developer to develop an online food delivery web application with a 
+rich and user-friendly interface. You are hired as the Full Stack Java developer and are asked to develop 
+the web application. The management team has provided you with the requirements and their business 
+model so that you can easily arrange different components of the application.
+The following are the major objective of this application.
+1. To provide a bug-free Online Food Delivery system to Users as well as Admin.
+2. The main objective is here to provide a nice and secure platform for Ordering Food.
+3. To maintain the records of Product, Category available into the system.
+
+Functional Requirements:
+Below are the key responsibilities and functionalities to be implemented in the admin portal. 
+The admin user should be able to:
+1. Login to portal
+2. Create Admin Account
+3. Add or remove cuisines to or from the application to build a rich product line
+4. Edit food item details like name, price, cuisine, description, and offers to keep it aligned to 
+current prices.
+5. Enable or disable food items.
+Below are the key responsibilities and functionalities to be implemented in the user portal. 
+The end user must be able to:
+1. Register to the application
+2. Change password
+3. Update Profile
+4. Sign into the application to maintain the record of activities
+5. Search for food items based on the search keyword
+6. Apply filters and sort results based on different cuisines to get the best deals
+7. Add all the selected food items to a cart and customize the purchase at the end
+8. Perform a seamless payment process 
+
+Real Life Lab (RLL) – Requirement Specifications 
+
+9. Get an order summary page once the payment is complete
+Phase 1: Database Schema Design
+1. Identify domain objects and their attributes as per the requirement.
+2. Create a Database tables with necessary relationship as per the requirement.
+Phase 2: Front End Development
+Develop a UI as per requirements for online food delivery web application using Angular. PFB 
+screenshots for references.
+Real Life Lab (RLL) – Requirement Specifications 
+
+Phase 3: Back End Development
+Develop a RESTful Web API to perform CRUD operations on Domain objects as per requirement using 
+Spring Boot and MySQL/Oracle database.
+Steps to develop a Restful Web API.
+1. Identify the domain objects and their attributes as per requirements.
+2. Design Database Schema as per requirements.
+3. Create Entity class for each domain object with required attributes.
+4. Create DAO class for performing CRUD operations using Spring Data JPA for each Entity.
+5. Create a Service class to invoke DAO class methods for each Entity.
+6. Create a Controller class to build the RESTful Web API using Service class using required 
+annotations.
+
+Phase 4: Unit Testing
+1. Perform Unit Testing using Junit frameworks for all the functional requirements.
+2. Perform Functional Testing using POSTMAN for all REST end points.
+Note:
+• Use proper Java Naming Conventions (package, class and interface, variable names).
+• Use Interfaces for loose coupling as and when required.
+• Use (Best Practices for REST API development).
+• Use standard HTTP status codes: 404,500,200,201,401,403 while implementing RESTful Web 
+API.
